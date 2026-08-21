@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ulian Jonathan</title>
+<style>
+  :root{
+    --paper: #f7f6f2;
+    --ink: #1c1c1a;
+    --ink-soft: #5a5a54;
+    --accent: #2c3a63;
+    --accent-soft: #c9cedd;
+    --rule: #dcdad2;
+    --serif: 'Fraunces', 'Georgia', serif;
+    --sans: 'Inter', 'Helvetica Neue', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6;}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .wrap{max-width:880px; margin:0 auto; padding:0 28px;}
+
+  header{padding:28px 0; border-bottom:1px solid var(--rule);}
+  .topbar{display:flex; justify-content:space-between; align-items:center; max-width:880px; margin:0 auto; padding:0 28px;}
+  .mark{font-family:var(--serif); font-weight:600; font-size:19px;}
+  nav ul{display:flex; gap:26px; list-style:none; font-size:13px;}
+  nav a{color:var(--ink-soft);}
+  nav a:hover{color:var(--accent);}
+
+  /* hero — editorial, big serif name, handwritten-style underline signature */
+  .hero{padding:88px 0 60px;}
+  .profile-pic{
+    width:120px; height:120px; border-radius:50%; object-fit:cover;
+    border:2px solid var(--accent); margin-bottom:24px; display:block;
+  }
+  .kicker{font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin-bottom:18px; font-weight:600;}
+  h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(44px, 8vw, 84px);
+    line-height:0.98;
+    letter-spacing:-0.02em;
+    margin-bottom:20px;
+  }
+  h1 .accent-word{font-style:italic; color:var(--accent); font-weight:500;}
+  .role-line{display:flex; align-items:center; gap:14px; margin-bottom:28px;}
+  .role-line svg{flex-shrink:0;}
+  .role{font-size:16px; color:var(--ink-soft);}
+  .lede{max-width:520px; font-size:16px; color:var(--ink-soft); margin-bottom:34px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 26px; font-size:13.5px; font-weight:600;
+    border-radius:2px; border:1.5px solid var(--ink);
+  }
+  .btn.primary{background:var(--ink); color:var(--paper);}
+  .btn.primary:hover{background:var(--accent); border-color:var(--accent); text-decoration:none;}
+  .btn.ghost{color:var(--ink);}
+  .btn.ghost:hover{background:var(--ink); color:var(--paper); text-decoration:none;}
+
+  section{padding:56px 0; border-bottom:1px solid var(--rule);}
+  .num-label{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--accent); margin-bottom:6px;}
+  h2{font-family:var(--serif); font-weight:600; font-size:32px; margin-bottom:28px; letter-spacing:-0.01em;}
+
+  /* skills as an editorial index list, not cards */
+  .skill-index{display:grid; grid-template-columns:1fr; }
+  .skill-row{display:grid; grid-template-columns:180px 1fr; gap:20px; padding:14px 0; border-top:1px solid var(--rule);}
+  .skill-row:last-child{border-bottom:1px solid var(--rule);}
+  .skill-row .cat{font-family:var(--serif); font-style:italic; font-size:15px; color:var(--ink);}
+  .skill-row .items{color:var(--ink-soft); font-size:14.5px;}
+
+  /* experience — classic resume style */
+  .entry{display:grid; grid-template-columns:150px 1fr; gap:22px; padding:22px 0; border-top:1px solid var(--rule);}
+  .entry:last-child{border-bottom:1px solid var(--rule);}
+  .entry .when{font-size:13px; color:var(--ink-soft); padding-top:3px;}
+  .entry h3{font-family:var(--serif); font-size:19px; font-weight:600; margin-bottom:4px;}
+  .entry .org{color:var(--accent); font-size:13.5px; margin-bottom:8px; font-weight:600;}
+  .entry p{color:var(--ink-soft); font-size:14.5px; max-width:480px;}
+
+  /* projects */
+  .proj-list{display:flex; flex-direction:column;}
+  .proj{display:grid; grid-template-columns:1fr auto; align-items:start; gap:20px; padding:24px 0; border-top:1px solid var(--rule);}
+  .proj:last-child{border-bottom:1px solid var(--rule);}
+  .proj h3{font-family:var(--serif); font-size:21px; font-weight:600; margin-bottom:6px;}
+  .proj p{color:var(--ink-soft); font-size:14.5px; max-width:460px;}
+  .proj .go{font-size:13px; font-weight:600; white-space:nowrap; padding-top:4px;}
+
+  footer{padding:44px 0; text-align:center;}
+  footer p{color:var(--ink-soft); font-size:12.5px;}
+  .sig-mark{font-family:var(--serif); font-style:italic; font-size:15px; color:var(--accent); margin-bottom:6px;}
+
+  @media (max-width:640px){
+    .entry, .skill-row{grid-template-columns:1fr;}
+    .proj{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="mark">Ulian Jonathan</div>
+    <nav>
+      <ul>
+        <li><a href="#skills">My Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">My Certifcation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img src="my_foto.jpeg" alt="Foto Nama Kamu" class="profile-pic">
+      <h1>Ulian<br>Jonathan <span class="accent-word"></span></h1>
+      <div class="role-line">
+        <svg width="28" height="2" viewBox="0 0 28 2"><line x1="0" y1="1" x2="28" y2="1" stroke="#2c3a63" stroke-width="1.5"/></svg>
+        <div class="role">IT Presales Engineer</div>
+      </div>
+      <p class="lede">Cyber Security Presales Engineer with 6+ years of experience in IT and 3+ years specializing in cybersecurity. Experienced in designing security solutions, conducting technical presentations and demonstrations, understanding customer requirements, and providing solutions across network security, endpoint security, and email security..</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#work">Work</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>My Skills</h2>
+      <div class="skill-index">
+        <div class="skill-row"><div class="cat">System &amp; Infra</div><div class="items">Linux, Networking, Security</div></div>
+        <div class="skill-row"><div class="cat">Cyber Security</div><div class="items">SIEM (Wazuh), monitoring, incident response</div></div>
+        <div class="skill-row"><div class="cat">Scripting & Automation</div><div class="items">Python, Bash, PowerShell with Ansible</div></div>
+        <div class="skill-row"><div class="cat">Presales & Consulting</div><div class="items">Solution Design, Requirement Gathering, Technical Presentation, Product Demo, Security Solution Consulting</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experienced</h2>
+      <div class="entry">
+        <div class="when">2022 — Current</div>
+        <div>
+          <h3>I-Security Engineer [Pre-Post Sales]</h3>
+          <div class="org">PT M.Tech Products</div>
+        </p>   Pre-Sales Security - Security Architecture: Designing secure solutions tailored to specific customer needs (security-by-design), Education & Validation: Communicating the product’s security features to reassure the buyer’s IT/security team.</p>
+        </p>   Post-Sales Security - Focuses on maintaining operational security, protecting customer data, and addressing threats once the service is in use.</p>
+        </p> • Implementation & Configuration: Ensuring that the integration process and initial setup of the customer’s system are carried out securely.</p>
+        </p> • Monitoring & Maintenance: Performing updates (patching), conducting regular threat monitoring, and managing security vulnerabilities..</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2020 — 2022</div>
+        <div>
+          <h3>Network & System Security Engineer</h3>
+          <div class="org">PT IP Network Solusindo</div>
+          </p>• Managed the BRI Email Security project, implementing Cisco Antispam solutions. </p>
+          </p>• Oversaw the configuration and management of Palo Alto firewalls (3220 and 5220). </p>
+          </p>• Integrated various networking devices, including Extreme switches and Juniper access points, to enhance network performance.</p>
+          </p>• Collaborated with a dynamic team at IP Network Solusindo, a startup focused on innovative networking solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Certification</h2>
+      <div class="proj-list">
+        <div class="proj">
+          <div>
+            <h3>Proofpoint Certification Certified Security Engineer (PCCSE)</h3>
+            <h3>Proofpoint Partner Program: Sales Engineer<h3>
+              <h3>Proofpoint Partner Program: Technical Sales Expert </h3>
+              <h3>Juniper Networks Certified Specialist, Security (JNCIS-SEC)</h3>
+              <h3>Juniper Networks Certified Associate, Security (JNCIA-SEC)</h3>
+              <h3>Palo Alto Networks Certified Network Security Engineer</h3>
+              <h3>Juniper Networks Certified Associate, Junos (JNCIA-Junos)</h3>
+              <h3>Tanium Partner | Sales Champion</h3>
+              <h3>Cisco Cybersecurity Defense Analyst Career Path</h3>
+              <h3>Proofpoint Accredited Channel Sales Professional (PACSP)</h3>
+          </div>
+          <a class="go" href="#">Lihat →</a>
+        </div>
+  </section>
+
+  <section id="contact" style="border-bottom:none;">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p style="color:var(--ink-soft); font-size:14.5px; max-width:440px; margin-bottom:22px;">For More Information.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:email@domainkamu.com">ulianmarbun16@gmail.com</a>
+        <a class="btn ghost" href="#">https://github.com/ulianmarbun16-wq</a>
+        <a class="btn ghost" href="#">www.linkedin.com/in/ulian-jonathan-766444339</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="sig-mark">Ulian Jonathan</div>
+  <p>© 2026 — Ulian Jonathan. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
