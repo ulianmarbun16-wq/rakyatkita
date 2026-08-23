@@ -6,7 +6,6 @@
 <title>Ulian Jonathan</title>
 <link rel="icon" type="image/png" href="Untitled (Stickers (Rectangle) (Landscape)).png?v=2">
 
-<!-- AOS Animation CSS -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <style>
@@ -95,7 +94,6 @@
   footer p{color:var(--ink-soft); font-size:12.5px;}
   .sig-mark{font-family:var(--serif); font-style:italic; font-size:15px; color:var(--accent); margin-bottom:6px;}
 
-  /* Chatbot Floating Widget */
   #chat-toggle-btn {
     position: fixed;
     bottom: 24px;
@@ -340,7 +338,6 @@
   <p>© 2026 — Ulian Jonathan. Powered by Rakyat Kita.</p>
 </footer>
 
-<!-- Floating Chatbot Widget UI -->
 <div id="chat-widget">
   <div class="chat-header">
     <div class="title">Ask AI about Ulian</div>
@@ -359,7 +356,6 @@
   <span>Ask Me</span>
 </button>
 
-<!-- AOS Animation Script -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init({
@@ -368,11 +364,7 @@
     offset: 80
   });
 
-  // =========================================================
-  // GEMINI CHATBOT LOGIC (via Cloudflare Worker proxy)
-  // Tidak ada API key di file ini sama sekali — key disimpan
-  // sebagai Secret di Cloudflare Worker.
-  // =========================================================
+  
   const PROXY_URL = "https://gemini-proxy-ulian.ulianmarbun16.workers.dev";
 
   function toggleChat() {
@@ -425,8 +417,7 @@ Answer politely, accurately, and concisely based on Ulian's data above.\n\nVisit
       if (response.ok && data.reply) {
         botLoadingDiv.innerText = data.reply;
       } else {
-        // Detail error tetap dicatat di console untuk debugging,
-        // tapi pengunjung situs hanya melihat pesan yang ramah.
+
         console.error("Gemini API Error Detail:", data);
         botLoadingDiv.innerText = "Maaf, asisten AI sedang dalam perbaikan sementara. Silakan hubungi Ulian langsung lewat email di bawah untuk pertanyaan apapun.";
       }
