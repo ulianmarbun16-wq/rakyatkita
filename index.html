@@ -425,12 +425,14 @@ Answer politely, accurately, and concisely based on Ulian's data above.\n\nVisit
       if (response.ok && data.reply) {
         botLoadingDiv.innerText = data.reply;
       } else {
+        // Detail error tetap dicatat di console untuk debugging,
+        // tapi pengunjung situs hanya melihat pesan yang ramah.
         console.error("Gemini API Error Detail:", data);
-        botLoadingDiv.innerText = "Error API: " + (data.error || "Invalid Response");
+        botLoadingDiv.innerText = "Maaf, asisten AI sedang dalam perbaikan sementara. Silakan hubungi Ulian langsung lewat email di bawah untuk pertanyaan apapun.";
       }
     } catch (error) {
       console.error("Fetch Error:", error);
-      botLoadingDiv.innerText = "Network Error, silakan coba lagi.";
+      botLoadingDiv.innerText = "Maaf, asisten AI sedang tidak dapat diakses saat ini. Silakan hubungi Ulian langsung lewat email di bawah.";
     }
   }
 </script>
